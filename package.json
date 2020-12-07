@@ -25,6 +25,7 @@
     "icons": "node build/build-svgs.js && npm run icons-sprite",
     "icons-zip": "cross-env-shell \"shx rm -rf bootstrap-icons-$npm_package_version && shx cp -r icons/ bootstrap-icons-$npm_package_version && shx cp bootstrap-icons.svg bootstrap-icons-$npm_package_version && zip -r9 bootstrap-icons-$npm_package_version.zip bootstrap-icons-$npm_package_version && shx rm -rf bootstrap-icons-$npm_package_version\"",
     "icons-sprite": "svg-sprite --svg-namespace-classnames false --symbol --symbol-dest . --symbol-sprite bootstrap-icons.svg icons/*.svg",
+    "font": "fantasticon",
     "publish": "npm-run-all icons docs-build icons-zip",
     "netlify": "cross-env-shell HUGO_BASEURL=$DEPLOY_PRIME_URL npm-run-all icons docs-purge docs-build",
     "test:fusv": "fusv docs/assets/scss/",
@@ -61,7 +62,8 @@
   },
   "files": [
     "icons/*.svg",
-    "bootstrap-icons.svg"
+    "bootstrap-icons.svg",
+    "fonts"
   ],
   "hugo-bin": {
     "buildTags": "extended"
